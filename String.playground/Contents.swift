@@ -60,3 +60,17 @@ func deleteDuplicates(_ string: String) -> String {
 
     return result
 }
+
+
+//Написать функцию, выполняющую удаление множественных пробелов (подряд) в строке, оставляя лишь один
+func deleteSpaces(_ string: String) -> String {
+    var result = String()
+    
+    for (index, char) in Array(string).enumerated() {
+        if !(String(char) == " " && Array(string)[index + 1] == char) {
+            result.append(String(char))
+        }
+    }
+    
+    return result
+}
