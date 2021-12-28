@@ -2,4 +2,4 @@
 
 - algorithms
 - data structures
-- tasks resolving
+- logical tasks resolving
