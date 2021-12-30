@@ -111,3 +111,22 @@ func pangrammCheck(_ string: String) -> Bool {
     
     return result
 }
+
+
+//Написать функцию, которая считает количество гласных и согласных в строке и возращает тюпл с соотв. значениями
+func checkLetters(_ string: String) -> (vowels: Int, consonants: Int) {
+    let glLetters = "eyuioa"
+    let sgLetters = "qwrtpsdfghjklmnbvcxz"
+    var vowels = 0
+    var consonants = 0
+    
+    for char in string.lowercased() {
+        if glLetters.contains(char) {
+            vowels += 1
+        } else if sgLetters.contains(char) {
+            consonants += 1
+        }
+    }
+
+    return (vowels, consonants)
+}
