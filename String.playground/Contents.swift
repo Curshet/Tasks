@@ -92,3 +92,23 @@ func revertCheck(_ firstString: String, _ secondString: String) -> Bool {
     
     return result
 }
+
+
+//Нааисать функцию, проверяющую факт того, что строка является панграммой (без учёта регистра)
+func pangrammCheck(_ string: String) -> Bool {
+    guard string.count >= 26 else { return false }
+    
+    var result = false
+    
+    let alphabet = "qwertyuiopasdfghjklzxcvbnm"
+    
+    for char in string.lowercased() {
+        if alphabet.contains(char) {
+            result = true
+        } else {
+            return false
+        }
+    }
+    
+    return result
+}
