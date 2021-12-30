@@ -130,3 +130,19 @@ func checkLetters(_ string: String) -> (vowels: Int, consonants: Int) {
 
     return (vowels, consonants)
 }
+
+
+//Написать функцию, проверяющую схожесть строк по длине и отличию не более чем на 3 символа (без учёта регистра)
+func checkDifference(_ firstString: String, _ secondString: String) -> Bool {
+    guard firstString.count == secondString.count else { return false }
+    
+    var count = 0
+    
+    for (index, char) in firstString.lowercased().enumerated() {
+        if char != Array(secondString.lowercased())[index] {
+            count += 1
+        }
+    }
+    
+    return count <= 3
+}
