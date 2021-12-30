@@ -1,6 +1,6 @@
 import Foundation
 
-//Написать функцию, выполняющую проверку строки на уникальность содержащихся символов (без учёта регистра)
+//Написать функцию, выполняющую проверку строки на уникальность содержащихся символов (учёт регистра)
 func isUniqString(_ string: String) -> Bool {
     Set(string.lowercased()).count == string.lowercased().count
 }
@@ -20,7 +20,7 @@ func isPalindrom(_ string: String) -> Bool {
 }
 
 
-//Написать функцию, проверяющую факт содержания одинаковых символов у двух строк (с учётом регистра)
+//Написать функцию, проверяющую факт содержания одинаковых символов у двух строк (учёт регистра)
 func isContainsSymbol(_ firstString: String, _ secondString: String) -> Bool {
     var count = 0
     
@@ -69,6 +69,24 @@ func deleteSpaces(_ string: String) -> String {
     for (index, char) in Array(string).enumerated() {
         if !(String(char) == " " && Array(string)[index + 1] == char) {
             result.append(String(char))
+        }
+    }
+    
+    return result
+}
+
+
+//Написать функцию, проверяющую факт того, что одна строка является перевёрнутой версий другой строки (учёт регистра)
+func revertCheck(_ firstString: String, _ secondString: String) -> Bool {
+    guard firstString.count == secondString.count else { return false }
+    
+    var result = Bool()
+    
+    for (index, char) in firstString.enumerated() {
+        if char == Array(secondString)[secondString.count - 1 - index] {
+            result = true
+        } else {
+            return false
         }
     }
     
