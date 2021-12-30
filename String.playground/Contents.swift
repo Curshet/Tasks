@@ -94,7 +94,7 @@ func revertCheck(_ firstString: String, _ secondString: String) -> Bool {
 }
 
 
-//Нааисать функцию, проверяющую факт того, что строка является панграммой (без учёта регистра)
+//Написать функцию, проверяющую факт того, что строка является панграммой (без учёта регистра)
 func pangrammCheck(_ string: String) -> Bool {
     guard string.count >= 26 else { return false }
     
