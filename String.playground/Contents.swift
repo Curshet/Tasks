@@ -99,7 +99,6 @@ func pangrammCheck(_ string: String) -> Bool {
     guard string.count >= 26 else { return false }
     
     var result = false
-    
     let alphabet = "qwertyuiopasdfghjklzxcvbnm"
     
     for char in string.lowercased() {
